@@ -1,5 +1,5 @@
 logger Plugin for DokuWiki
-
+===========================
 This plugin logs every request of DokuWiki. It logs the date, time, ip, username, pc name, query string and user agent.
 
 All documentation for this plugin can be found at
