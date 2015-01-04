@@ -19,8 +19,14 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
      * @return void
      */
     public function register(Doku_Event_Handler $controller) {
-
         $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, 'handle_before', array());
+    }
+
+    /**
+     * catch logouts
+     */
+    function handle_before(&$event, $param) {
+        $this->_log();
     }
 
     /**
@@ -145,13 +151,6 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
 
             #-----------------------------------------------------------------------
         }
-    }
-
-    /**
-     * catch logouts
-     */
-    function handle_before(&$event, $param) {
-        $this->_log();
     }
 
 }
