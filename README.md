@@ -1,5 +1,4 @@
 # Logger Plugin for DokuWiki
-======================
 
 This plugin logs every request of DokuWiki. It logs the date, time, ip, username, pc name, query string and user agent.
 
@@ -13,7 +12,7 @@ will not work!
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
 
-----------------------
+
 Copyright (C) Jens Pabel <info@geofreak.de>
 
 This program is free software; you can redistribute it and/or modify
