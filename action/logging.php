@@ -23,7 +23,7 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
     }
 
     /**
-     * catch logouts
+     * 
      */
     function handle_before(&$event, $param) {
         $this->_log();
