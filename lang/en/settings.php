@@ -12,4 +12,4 @@ $lang['ip'] = "Log IP:";
 $lang['user'] = "Log user:";
 $lang['pc_name'] = "Log pc name:";
 $lang['query_string'] = "Log query string:";
-$lang['user_agent'] = "Log user agent:";
+$lang['user_agent'] = "Log user agent (browser):";
