@@ -12,6 +12,7 @@ will not work!
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
 
+======================
 
 Copyright (C) Jens Pabel <info@geofreak.de>
 
