@@ -19,7 +19,11 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
      * @return void
      */
     public function register(Doku_Event_Handler $controller) {
+        #Log dokuwiki page requests
         $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, 'handle_before', array());
+          
+        #Log dokuwiki media files requests
+        $controller->register_hook('FETCH_MEDIA_STATUS', 'BEFORE', $this, 'handle_before', array());
     }
 
     /**
