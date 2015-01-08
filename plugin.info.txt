@@ -3,5 +3,5 @@ author Jens Pabel
 email  info@geofreak.de
 date   2015-01-07
 name   Logger Plugin
-desc   This plugin logs every request of DokuWiki. It logs the date, time, ip, username, pc name, query string and user agent.
+desc   This plugin logs every request of DokuWiki. It logs the date, time, ip, username, host name, query string and user agent.
 url    https://www.dokuwiki.org/plugin:logger
