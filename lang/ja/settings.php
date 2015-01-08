@@ -10,6 +10,6 @@ $lang['date'] = "ログ日付：";
 $lang['time'] = "ログ時刻：";
 $lang['ip'] = "ログ IP：";
 $lang['user'] = "ログユーザー名：";
-$lang['pc_name'] = "ログ PC 名：";
+$lang['host_name'] = "ログ PC 名：";
 $lang['query_string'] = "ログクエリ文字列：";
 $lang['user_agent'] = "ログユーザーエージェント（ブラウザ）：";
