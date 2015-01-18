@@ -77,7 +77,7 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
             }
 
             #Check pc name option gethostbyaddr
-            if ($this->getConf('pc_name') === 1) {
+            if ($this->getConf('host_name') === 1) {
                 $log_dataset .= ";" . '"' . gethostbyaddr($_SERVER['REMOTE_ADDR']) . '"';
             }
 
