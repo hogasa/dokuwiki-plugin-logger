@@ -4,7 +4,7 @@
  * DokuWiki Plugin logger (Action Component)
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
- * @author  Jens Pabel <info@geofreak.de>
+ * @author Jens Brokfeld <geofreak.de@gmail.com>
  */
 // must be run within Dokuwiki
 if (!defined('DOKU_INC'))
@@ -21,13 +21,13 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
     public function register(Doku_Event_Handler $controller) {
         #Log dokuwiki page requests
         $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, 'handle_before', array());
-          
+
         #Log dokuwiki media files requests
         $controller->register_hook('FETCH_MEDIA_STATUS', 'BEFORE', $this, 'handle_before', array());
     }
 
     /**
-     * 
+     *
      */
     function handle_before(&$event, $param) {
         $this->_log();
@@ -92,17 +92,42 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
                 $log_dataset .= ";" . '"' . $_SERVER['HTTP_USER_AGENT'] . '"';
             }
 
+
+
             #-----------------------------------------------------------------------
             #
             #Remove the first delimiter (;)
             $log_dataset = substr($log_dataset, 1);
 
-            #-----------------------------------------------------------------------
-            #
-            #Save log dataset
-            io_saveFile($conf['mediadir'] . '/admin/logs/' . date("Y", $timestamp) . '.csv', "$log_dataset\n", true);
 
-            #-----------------------------------------------------------------------
+            $ns_exclude = $this->getConf('ns_exclude');
+            if ($ns_exclude == '') {
+              #-----------------------------------------------------------------------
+              #
+              #Save log dataset
+              io_saveFile($conf['mediadir'] . '/admin/logs/' . date("Y", $timestamp) . '.csv', "$log_dataset\n", true);
+              #-----------------------------------------------------------------------
+            }else{
+              $nsArray = explode(';',$ns_exclude);
+
+              #Check, if logging is desired
+              $doLogging = true;
+              for ($i=0; $i < sizeof($nsArray); $i++) {
+                $ns = 'id=' . $nsArray[$i];
+                if(strpos($_SERVER['QUERY_STRING'],$ns)===0){
+                  $doLogging = false;
+                  break;
+                }
+              }
+
+              #Save log dataset
+              if($doLogging){
+                io_saveFile($conf['mediadir'] . '/admin/logs/' . date("Y", $timestamp) . '.csv', "$log_dataset\n", true);
+              }
+
+            }
+
+
         }
     }
 

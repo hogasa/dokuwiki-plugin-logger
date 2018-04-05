@@ -2,7 +2,8 @@
 /**
  * Default values of settings.
  *
- * @author Jens Pabel <info@geofreak.de>
+ * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
+ * @author Jens Brokfeld <geofreak.de@gmail.com>
  */
 
 $conf['enabled'] = 1;
@@ -13,3 +14,4 @@ $conf['user'] = 1;
 $conf['host_name'] = 1;
 $conf['query_string'] = 1;
 $conf['user_agent'] = 1;
+$conf['ns_exclude'] = '';

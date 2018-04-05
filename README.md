@@ -15,7 +15,7 @@ on how to install plugins in DokuWiki.
 
 ======================
 
-Copyright (C) Jens Pabel <geofreak.de@gmail.com>
+Copyright (C) Jens Brokfeld <geofreak.de@gmail.com>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

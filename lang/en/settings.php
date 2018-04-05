@@ -2,7 +2,8 @@
 /**
  * English translations of settings.
  *
- * @author Jens Pabel <info@geofreak.de>
+ * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
+ * @author Jens Brokfeld <geofreak.de@gmail.com>
  */
 
 $lang['enabled'] = "Logger enabled:";
@@ -13,3 +14,4 @@ $lang['user'] = "Log user:";
 $lang['host_name'] = "Log host name:";
 $lang['query_string'] = "Log query string:";
 $lang['user_agent'] = "Log user agent:";
+$lang['ns_exclude'] = "Exclude namespaces:";
