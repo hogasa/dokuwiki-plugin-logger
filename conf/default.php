@@ -15,3 +15,4 @@ $conf['host_name'] = 1;
 $conf['query_string'] = 1;
 $conf['user_agent'] = 1;
 $conf['ns_exclude'] = '';
+$conf['monthly'] = 0;

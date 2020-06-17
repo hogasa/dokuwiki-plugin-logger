@@ -15,3 +15,4 @@ $meta['host_name'] = array('onoff');
 $meta['query_string'] = array('onoff');
 $meta['user_agent'] = array('onoff');
 $meta['ns_exclude'] = array('string');
+$meta['monthly'] = array('onoff');

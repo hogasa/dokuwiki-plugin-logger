@@ -100,12 +100,19 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
             $log_dataset = substr($log_dataset, 1);
 
 
+            #Check monthly option
+            if ($this->getConf('monthly') === 1) {
+                $log_filename = date("Y-m", $timestamp) . '.csv';
+            } else {
+                $log_filename = date("Y", $timestamp) . '.csv';
+            }
+
             $ns_exclude = $this->getConf('ns_exclude');
             if ($ns_exclude == '') {
               #-----------------------------------------------------------------------
               #
               #Save log dataset
-              io_saveFile($conf['mediadir'] . '/admin/logs/' . date("Y", $timestamp) . '.csv', "$log_dataset\n", true);
+              io_saveFile($conf['mediadir'] . '/admin/logs/' . $log_filename, "$log_dataset\n", true);
               #-----------------------------------------------------------------------
             }else{
               $nsArray = explode(';',$ns_exclude);
@@ -122,7 +129,7 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
 
               #Save log dataset
               if($doLogging){
-                io_saveFile($conf['mediadir'] . '/admin/logs/' . date("Y", $timestamp) . '.csv', "$log_dataset\n", true);
+                io_saveFile($conf['mediadir'] . '/admin/logs/' . $log_filename, "$log_dataset\n", true);
               }
 
             }

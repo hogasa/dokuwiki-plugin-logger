@@ -15,3 +15,4 @@ $lang['host_name'] = "Log host name:";
 $lang['query_string'] = "Log query string:";
 $lang['user_agent'] = "Log user agent:";
 $lang['ns_exclude'] = "Exclude namespaces:";
+$lang['monthly'] = "Monthly log file:";
