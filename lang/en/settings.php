@@ -16,3 +16,4 @@ $lang['query_string'] = "Log query string:";
 $lang['user_agent'] = "Log user agent:";
 $lang['ns_exclude'] = "Exclude namespaces:";
 $lang['monthly'] = "Monthly log file:";
+$lang['anonymous'] = "Log anonymous access:";

@@ -38,6 +38,11 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
             return 0;
         }
 
+        #Check anonymous option
+        if ($this->getConf('anonymous') !== 1) {
+            return 0;
+        }
+
         return 1;
     }
 
