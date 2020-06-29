@@ -33,6 +33,14 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
         $this->_log();
     }
 
+    function _logging_is_desired(){
+        if ($this->getConf('enabled') !== 1) {
+            return 0;
+        }
+
+        return 1;
+    }
+
     /**
      * This function logs the current request to dokuwiki.
      * @global type $conf
@@ -41,7 +49,7 @@ class action_plugin_logger_logging extends DokuWiki_Action_Plugin {
         global $conf;
 
         #Logger is enabled
-        if ($this->getConf('enabled') === 1) {
+        if ($this->_logging_is_desired()) {
             #-----------------------------------------------------------------------
             #
             #log dataset variable (empty)
